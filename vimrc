@@ -25,6 +25,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Note: You don't set neobundle setting in .gvimrc!
 
 " ...
+NeoBundle 'simplyzhao/cscope_maps.vim'
 
 filetype plugin indent on     " Required!
 "
