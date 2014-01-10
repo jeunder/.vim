@@ -26,6 +26,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " ...
 NeoBundle 'simplyzhao/cscope_maps.vim'
+NeoBundle 'vim-scripts/taglist.vim'
 
 filetype plugin indent on     " Required!
 "
