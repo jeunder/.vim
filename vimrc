@@ -1,7 +1,17 @@
 " ================================
 " Status bar
-" ================================
 set ls=2
+
+" TAB
+set shiftwidth=4
+set tabstop=4
+set expandtab
+
+" Line Number
+set number
+
+" Highlight Search
+set hlsearch
 
 " ================================
 " NeoBundle
