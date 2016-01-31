@@ -48,12 +48,12 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 "
 " Note: You don't set neobundle setting in .gvimrc!
 
-call neobundle#end()
-
 " ...
 NeoBundle 'simplyzhao/cscope_maps.vim'
 NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'guns/xterm-color-table.vim'
+
+call neobundle#end()
 
 filetype plugin indent on     " Required!
 "
