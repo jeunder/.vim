@@ -1,4 +1,11 @@
 " ================================
+" Use Vim settings, rather than Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+set nocompatible
+
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
 " Status bar
 set ls=2
 
@@ -21,7 +28,7 @@ if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
@@ -44,6 +51,9 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " ...
 NeoBundle 'simplyzhao/cscope_maps.vim'
 NeoBundle 'vim-scripts/taglist.vim'
+NeoBundle 'guns/xterm-color-table.vim'
+
+call neobundle#end()
 
 filetype plugin indent on     " Required!
 "
