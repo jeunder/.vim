@@ -20,7 +20,7 @@ set number
 " Highlight Search
 set hlsearch
 set incsearch
-hi Search term=reverse ctermfg=0 ctermbg=11 guibg=Yellow
+hi Search term=reverse ctermfg=0 ctermbg=3 guibg=Yellow
 
 " ================================
 " NeoBundle
