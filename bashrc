@@ -15,20 +15,19 @@ mkcscope_file_filter='
 '
 
 function mkcscope_find_argument() {
-    local args=""
-    for i in ${mkcscope_file_filter}; do
-        if [ ! "${args}" ]; then
-            args+="-iname $i"
-        else
-            args+=" -o -iname $i"
-        fi
-    done
-    echo ${args}
+    local newline_return_tab_to_space=$(echo "${mkcscope_file_filter}" |
+                                        tr '\n\r\t' ' ')
+    local insert_find_options=$(echo "${newline_return_tab_to_space}" |
+                                sed "s/^ */'/;
+                                     s/ *$/'/;
+                                     s/  */' -o -name '/g;
+                                     s/^/-name /;")
+    echo "${insert_find_options}"
 }
 
 function mkcscope_file_list() {
-    find \( $(mkcscope_find_argument) \) -a -exec realpath {} \; |
-        sed "s/^$(pwd | sed 's/\//\\\//g')\/\(.*\)$/\1/g" |
+    eval "find \( $(mkcscope_find_argument) \) -a -exec realpath {} \;" |
+        sed "s/^$(pwd | sed 's/\//\\\//g')\/\(.*\)$/\1/" |
         sort -u > cscope.files
 }
 
