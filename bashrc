@@ -26,7 +26,7 @@ function mkcscope_find_argument() {
 }
 
 function mkcscope_file_list() {
-    eval "find \( $(mkcscope_find_argument) \) -a -exec realpath {} \;" |
+    eval "find \( -type f -o -type l \) -a \( $(mkcscope_find_argument) \) -exec realpath {} \;" |
         sed "s/^$(pwd | sed 's/\//\\\//g')\/\(.*\)$/\1/" |
         sort -u > cscope.files
 }
