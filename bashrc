@@ -43,3 +43,7 @@ alias rmtags='rmctags && rmcscope'
 # python autocomplete
 export PYTHONSTARTUP=~/.vim/pythonrc
 
+# ccache
+export CCACHE_BASEDIR="$HOME"
+export CCACHE_SLOPPINESS="include_file_mtime"
+
